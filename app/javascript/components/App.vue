@@ -1,22 +1,18 @@
 <template>
   <div>
-    <p>{{ message }}</p>
+    <NavigationBar />
+    <RouterView />
   </div>
 </template>
 
 <script>
+import NavigationBar from "./elements/NavigationBar";
+
 export default {
-  data: function () {
-    return {
-      message: "Welcome to Horario"
-    }
-  }
+  components: { NavigationBar }
 }
 </script>
 
-<style scoped>
-p {
-  font-size: 2em;
-  text-align: center;
-}
+<style lang="scss" scoped>
+
 </style>
