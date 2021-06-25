@@ -71,9 +71,14 @@ export default {
     font-size: 16px;
     font-weight: bold;
     line-height: 50px;
+    color: #000000;
     padding: 0 10px;
     text-decoration: none;
     text-transform: uppercase;
+
+    &:visited {
+      color: #000000;
+    }
 
     &:hover {
       background-color: #730e15;
