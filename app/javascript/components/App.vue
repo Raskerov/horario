@@ -1,7 +1,10 @@
 <template>
   <div>
     <NavigationBar />
-    <RouterView />
+
+    <div class="app-content">
+      <RouterView />
+    </div>
   </div>
 </template>
 
@@ -14,5 +17,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+  .app-content {
+    padding: 30px;
+    width: 100%;
+    box-sizing: border-box;
+  }
 </style>

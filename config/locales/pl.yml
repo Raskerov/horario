@@ -1,2 +1,9 @@
 pl:
-  hello: "Hello world"
+  navigation:
+    dashboard: Strona główna
+    work_schedule: Grafik pracy
+    messages: Wiadomości
+    admin: Admin
+    profile: Mój profil
+    logout: Wyloguj
+    settings: Ustawienia
