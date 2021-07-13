@@ -22,12 +22,12 @@
     </div>
 
     <div class="navigation-bar__wrapper__right-side">
-      <RouterLink
-          :to="{ name: `admin` }"
+      <a
+          href="/admin"
           class="navigation-bar__nav-item"
       >
         {{ $t('navigation.admin') }}
-      </RouterLink>
+      </a>
       <RouterLink
           :to="{ name: `profile` }"
           class="navigation-bar__nav-item"
