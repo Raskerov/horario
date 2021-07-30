@@ -5,6 +5,12 @@ module App
 
     layout 'layouts/application'
 
-    def index;end
+    def index
+      redirect_to action: :auth, redirect: "app/#{params[:vue]}" unless current_user
+    end
+
+    def auth
+      redirect_to action: :index if current_user
+    end
   end
 end

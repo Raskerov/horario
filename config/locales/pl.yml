@@ -7,3 +7,11 @@ pl:
     profile: Mój profil
     logout: Wyloguj
     settings: Ustawienia
+  login:
+    welcome_back: Witaj ponownie
+    forgot_password: Nie pamiętasz hasła?
+    dont_have_account: Nie masz konta?
+    create_account: Załóż konto
+    email: Adres e-mail
+    password: Hasło
+    sign_in: Zaloguj
