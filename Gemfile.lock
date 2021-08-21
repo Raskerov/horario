@@ -68,6 +68,7 @@ GEM
       momentjs-rails (~> 2.8)
       sassc-rails (~> 2.1)
       selectize-rails (~> 0.6)
+    awesome_print (1.9.2)
     bcrypt (3.1.16)
     bindex (0.8.1)
     bootsnap (1.7.5)
@@ -240,6 +241,7 @@ PLATFORMS
 
 DEPENDENCIES
   administrate
+  awesome_print
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
@@ -258,7 +260,7 @@ DEPENDENCIES
   webpacker (~> 4.0)
 
 RUBY VERSION
-   ruby 3.0.0p0
+   ruby 3.0.2p107
 
 BUNDLED WITH
-   2.2.17
+   2.2.22

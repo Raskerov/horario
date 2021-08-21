@@ -34,7 +34,7 @@
       >
         {{ $t('navigation.profile') }}
       </RouterLink>
-      <div class="navigation-bar__nav-item">
+      <div class="navigation-bar__nav-item" @click="logout">
         {{ $t('navigation.logout') }}
       </div>
     </div>
@@ -43,7 +43,13 @@
 
 <script>
 export default {
-
+  methods: {
+    async logout() {
+      console.log(this);
+      await this.$auth.logout();
+      window.location = '/auth/login';
+    },
+  },
 }
 </script>
 
@@ -83,6 +89,7 @@ export default {
     &:hover {
       background-color: #730e15;
       color: #FFFFFF;
+      cursor: pointer;
     }
   }
 </style>

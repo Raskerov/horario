@@ -1,6 +1,5 @@
 <template>
   <div>
-    AUTH COMPONENT
     <RouterView />
   </div>
 </template>

@@ -20,6 +20,11 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  namespace :api do
+    resource :user, only: [:show, :update]
+  end
+
   root to: 'app/application#index'
 
   get '/app/(*vue)', to: 'app/application#index', as: :vue_app

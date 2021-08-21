@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :company_users, dependent: :destroy
   has_many :companies, through: :company_users
 
-  validates_presence_of :first_name, :last_name, :email
+  validates_presence_of :full_name, :email
 
   enum role: { owner: 1, manager: 2, worker: 3 }
 end

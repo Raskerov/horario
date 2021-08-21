@@ -2,7 +2,7 @@
   <form @submit.prevent="login">
     <InputBuilder
       name="email"
-      :value="form.fields.email"
+      v-model.lazy="form.fields.email"
       :label="$t('login.email')"
       :placeholder="$t('login.email')"
       required
@@ -14,9 +14,10 @@
 
     <InputBuilder
       name="password"
-      :value="form.fields.password"
+      v-model.lazy="form.fields.password"
       :label="$t('login.password')"
       :placeholder="$t('login.password')"
+      type="password"
       required
     />
 

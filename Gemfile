@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.0.0'
+ruby '3.0.2'
 
 gem 'rails', '~> 6.0.4'
 gem 'pg', '>= 0.18', '< 2.0'
@@ -16,6 +16,7 @@ gem 'administrate'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'awesome_print'
 end
 
 group :development do

@@ -12,6 +12,30 @@ pl:
     forgot_password: Nie pamiętasz hasła?
     dont_have_account: Nie masz konta?
     create_account: Załóż konto
-    email: Adres e-mail
+    email: Adres email
     password: Hasło
     sign_in: Zaloguj
+  register:
+    welcome: Witaj w Horario
+    edit_email: Możesz zmienić swój adres email później w Ustawieniach
+    sign_in: Zaloguj
+    full_name:
+      label: Imię i nazwisko
+      placeholder: Wpisz imię i nazwisko
+    email:
+      label: Email
+      placeholder: Użyj swojego adresu email
+    password:
+      label: Hasło
+      placeholder: Co najmniej 8 znaków
+    password_confirmation:
+      label: Wpisz ponownie hasło
+      placeholder: ••••••••••••
+    company:
+      label: Firma
+      placeholder: Nazwa firmy
+    check_your_email_title: One last step!
+    check_your_email: Check your email and click to confirm your account.
+    already_have_account: Masz już konto?
+    create_account: Stwórz konto
+    please_log_in: You can now log in
