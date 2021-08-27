@@ -1,11 +1,9 @@
 <template>
-  <div>
-    <div>
+  <div class="login">
+    <div class="login__welcome">
       {{ $t('login.welcome_back') }}
     </div>
-    <div class="overlay__form-wrapper">
-      <LoginForm @success="$emit('success', $event)" />
-    </div>
+    <LoginForm @success="$emit('success', $event)" />
   </div>
 </template>
 <script>
@@ -17,3 +15,14 @@ export default {
   },
 };
 </script>
+<style lang="scss" scoped>
+  .login {
+    text-align: center;
+    padding-top: 100px;
+
+    &__welcome {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+  }
+</style>

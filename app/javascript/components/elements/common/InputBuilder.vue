@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="input-field">
     <InputError :errors="errors">
       <label :for="name">
         <slot name="label">
@@ -109,11 +109,52 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  .input-field {
+    margin-bottom: 30px;
+  }
+
   input {
     outline: none;
   }
 
   sup {
     color: #ff2373;
+  }
+
+  label {
+    width: fit-content;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    position: relative;
+  }
+
+  .input-field input[type=text],
+  .input-field input[type=password],
+  .input-field input[type=email] {
+    background: #fff;
+    border: 2px #970000 solid;
+    border-radius: 22px;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 0 20px;
+    width: calc(100% - 44px);
+    height: 42px;
+
+    &:hover {
+      background: #fffff5;
+    }
+
+    &:focus {
+      background: #fffee2;
+      outline: none;
+    }
+
+    &::placeholder {
+      color: #8798ac;
+      font-weight: 400;
+      line-height: 24px;
+    }
   }
 </style>

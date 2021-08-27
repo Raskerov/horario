@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="login">
+  <form @submit.prevent="login" class="login-form">
     <InputBuilder
       name="email"
       v-model.lazy="form.fields.email"
@@ -7,10 +7,6 @@
       :placeholder="$t('login.email')"
       required
     />
-
-    <RouterLink :to="{name: 'forgot_password'}">
-      {{ $t('login.forgot_password') }}
-    </RouterLink>
 
     <InputBuilder
       name="password"
@@ -20,6 +16,12 @@
       type="password"
       required
     />
+
+    <div class="login-form__forgot-password">
+      <RouterLink :to="{name: 'forgot_password'}">
+        {{ $t('login.forgot_password') }}
+      </RouterLink>
+    </div>
 
     <button type="submit">
       {{ $t('login.sign_in') }}
@@ -59,5 +61,14 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+  .login-form {
+    width: 400px;
+    margin: 0 auto;
+  }
 
+  .login-form__forgot-password {
+    width: 100%;
+    text-align: right;
+    margin-top: -27px;
+  }
 </style>
