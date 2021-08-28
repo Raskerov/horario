@@ -133,8 +133,8 @@ export default {
   .input-field input[type=text],
   .input-field input[type=password],
   .input-field input[type=email] {
-    background: #fff;
-    border: 2px #970000 solid;
+    background: #ffffff;
+    border: 2px #730E15 solid;
     border-radius: 22px;
     font-size: 14px;
     font-weight: 500;
@@ -143,16 +143,16 @@ export default {
     height: 42px;
 
     &:hover {
-      background: #fffff5;
+      background: #fddcdc;
     }
 
     &:focus {
-      background: #fffee2;
+      background: #fddcdc;
       outline: none;
     }
 
     &::placeholder {
-      color: #8798ac;
+      color: #321818;
       font-weight: 400;
       line-height: 24px;
     }

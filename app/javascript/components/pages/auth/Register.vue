@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="register">
     <div>
       <RegisterForm />
     </div>
@@ -22,3 +22,9 @@ export default {
   },
 };
 </script>
+<style lang="scss" scoped>
+  .register {
+    text-align: center;
+    padding-top: 100px;
+  }
+</style>

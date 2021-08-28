@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="register">
+  <form @submit.prevent="register" class="register-form">
     <InputBuilder
       v-model.lazy="form.fields.fullName"
       name="fullName"
@@ -46,7 +46,7 @@
       :errors="form.errors.company"
     />
 
-    <button type="submit">
+    <button type="submit" class="button register-form__button">
       {{ $t('register.create_account') }}
     </button>
   </form>
@@ -79,4 +79,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  @import '../../../../assets/styles/button';
+
+  .register-form {
+    width: 400px;
+    margin: 0 auto;
+  }
+
+  .register-form__button {
+    margin: 0 0 25px 0;
+  }
 </style>
