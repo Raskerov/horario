@@ -17,7 +17,6 @@ pl:
     sign_in: Zaloguj
   register:
     welcome: Witaj w Horario
-    edit_email: Możesz zmienić swój adres email później w Ustawieniach
     sign_in: Zaloguj
     full_name:
       label: Imię i nazwisko
@@ -38,4 +37,7 @@ pl:
     check_your_email: Check your email and click to confirm your account.
     already_have_account: Masz już konto?
     create_account: Stwórz konto
-    please_log_in: You can now log in
+    please_log_in: You can now log in\
+  forgot_password:
+    welcome: Zapomniałeś hasła?
+    info: Wpisz swój adres email, aby otrzymać instrukcję do zresetowania hasła
