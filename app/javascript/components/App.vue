@@ -23,5 +23,7 @@ export default {
     padding: 30px;
     width: 100%;
     box-sizing: border-box;
+    background-color: #e2e2e2;
+    height: calc(100vh - 50px);
   }
 </style>

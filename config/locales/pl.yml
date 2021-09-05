@@ -42,4 +42,10 @@ pl:
     welcome: Zapomniałeś hasła?
     info: Wpisz swój adres email, aby otrzymać instrukcję do zresetowania hasła
   settings:
+    title: Ustawienia
+    text: Tutaj możesz zaaktualizować swoje dane
     update_user: Zaktualizuj dane
+    profile: Mój profil
+    password: Hasło
+    company: Firma
+    invitations: Zaproś pracowników

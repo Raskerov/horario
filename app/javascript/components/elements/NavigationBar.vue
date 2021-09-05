@@ -29,7 +29,7 @@
         {{ $t('navigation.admin') }}
       </a>
       <RouterLink
-          :to="{ name: `settings` }"
+          :to="{ name: `settings_profile` }"
           class="navigation-bar__nav-item"
       >
         {{ $t('navigation.settings') }}
@@ -90,6 +90,10 @@ export default {
       background-color: #730e15;
       color: #FFFFFF;
       cursor: pointer;
+    }
+
+    &:active {
+      transform: translateY(2px);
     }
   }
 </style>

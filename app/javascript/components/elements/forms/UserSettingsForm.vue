@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="update" class="register-form">
+  <form @submit.prevent="update">
     <InputBuilder
         v-model.lazy="form.fields.fullName"
         name="fullName"
@@ -18,7 +18,7 @@
         required
     />
 
-    <button type="submit" class="button register-form__button">
+    <button type="submit" class="button">
       {{ $t('settings.update_user') }}
     </button>
   </form>
@@ -52,7 +52,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-
-</style>
