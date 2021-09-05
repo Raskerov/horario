@@ -41,3 +41,5 @@ pl:
   forgot_password:
     welcome: Zapomniałeś hasła?
     info: Wpisz swój adres email, aby otrzymać instrukcję do zresetowania hasła
+  settings:
+    update_user: Zaktualizuj dane

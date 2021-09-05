@@ -16,9 +16,9 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   @import '../assets/styles/main';
-  
+
   .app-content {
     padding: 30px;
     width: 100%;

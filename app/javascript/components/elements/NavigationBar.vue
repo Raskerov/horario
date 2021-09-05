@@ -29,10 +29,10 @@
         {{ $t('navigation.admin') }}
       </a>
       <RouterLink
-          :to="{ name: `profile` }"
+          :to="{ name: `settings` }"
           class="navigation-bar__nav-item"
       >
-        {{ $t('navigation.profile') }}
+        {{ $t('navigation.settings') }}
       </RouterLink>
       <div class="navigation-bar__nav-item" @click="logout">
         {{ $t('navigation.logout') }}
