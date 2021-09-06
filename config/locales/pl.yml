@@ -49,3 +49,15 @@ pl:
     password: Hasło
     company: Firma
     invitations: Zaproś pracowników
+    fields:
+      current_password:
+        label: Obecne hasło
+        placeholder: '********'
+      password:
+        label: Nowe hasło
+        placeholder: '********'
+      password_confirmation:
+        label: Powtórz nowe hasło
+        placeholder: '********'
+      company:
+        label: Nazwa firmy

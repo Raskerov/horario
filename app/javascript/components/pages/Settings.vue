@@ -106,7 +106,6 @@ export default {
 
   .settings__content__text {
     font-size: 18px;
-    font-weight: bold;
     color: #000000;
   }
 </style>
