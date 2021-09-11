@@ -1,7 +1,7 @@
 import BaseForm from './base';
 import companyRepository from '../repositories/company_repository';
 
-export default class ChangePassword extends BaseForm {
+export default class Company extends BaseForm {
   fields = {
     name: ''
   };

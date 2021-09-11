@@ -1,5 +1,7 @@
 import Vue from 'vue';
 import VueAxios from 'vue-axios';
+import VueSimpleAlert from 'vue-simple-alert';
+
 import httpClient from './utils/http_client';
 import router from './routers/app';
 import i18n from './config/i18n';
@@ -13,6 +15,7 @@ Vue.axios.defaults.baseURL = '/api/';
 
 Vue.use(auth, {});
 Vue.use(roles, {});
+Vue.use(VueSimpleAlert);
 
 const app = new Vue({
   router,

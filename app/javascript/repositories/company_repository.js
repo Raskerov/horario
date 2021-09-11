@@ -10,5 +10,11 @@ export default {
     const response = await httpClient.put('/company', formData, { headers: { 'Content-Type': 'multipart/form-data' } });
 
     return response.data;
+  },
+
+  async delete({ password }) {
+    const response = await httpClient.post('/company', { password }, { headers: { 'X-Http-Method-Override': 'delete' } });
+
+    return response.data;
   }
 };

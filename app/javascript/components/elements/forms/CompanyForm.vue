@@ -34,7 +34,7 @@ export default {
   },
   methods: {
     async update() {
-      //  Handle company update
+      await this.form.submit();
     },
   },
 

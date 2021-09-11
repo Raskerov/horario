@@ -25,4 +25,18 @@
   &:disabled {
     background-color: #bf7275;
   }
+
+  &--reverse-color {
+    background-color: #ffffff;
+    color: #730E15;
+    border: 2px solid #730E15;
+
+    &:hover {
+      background-color: #bfbfbf;
+    }
+  }
+
+  &--alert {
+    margin: 0 10px;
+  }
 }

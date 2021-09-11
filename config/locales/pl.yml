@@ -45,19 +45,23 @@ pl:
     title: Ustawienia
     text: Tutaj możesz zaaktualizować swoje dane
     update_user: Zaktualizuj dane
+    delete: Usuń
+    abort: Anuluj
     profile: Mój profil
     password: Hasło
     company: Firma
     invitations: Zaproś pracowników
     fields:
       current_password:
-        label: Obecne hasło
+        label: Podaj hasło
         placeholder: '********'
       password:
-        label: Nowe hasło
+        label: Podaj hasło
         placeholder: '********'
       password_confirmation:
         label: Powtórz nowe hasło
         placeholder: '********'
       company:
         label: Nazwa firmy
+        delete: Usuń firmę
+        confirm_delete: Czy na pewno chcesz usunąć swoją firmę z aplikacji?
