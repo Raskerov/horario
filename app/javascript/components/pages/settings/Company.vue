@@ -35,8 +35,8 @@ export default {
         confirmButtonClass: 'button button--alert',
         cancelButtonClass: 'button button--alert button--reverse-color',
         cancelButtonText: `${this.$t('settings.abort')}`
-      }).then((password) => {
-        companyRepository.delete({ password });
+      }).then((input) => {
+        companyRepository.delete({ password: input.value });
       });
     },
   },
