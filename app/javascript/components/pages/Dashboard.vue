@@ -1,34 +1,28 @@
 <template>
-  <div class="dashboard">
-    <div class="item dashboard__welcome">
+  <div>
+    <div class="item dashboard__welcome section-title">
       {{ $t('dashboard.welcome', { user_name: $auth.user.fullName }) }}
     </div>
     <div class="item-row">
-      <div class="item item--big">
-
-      </div>
+      <UsersList class="item item--big" />
     </div>
   </div>
 </template>
 
 <script>
-export default {
+import UsersList from "../elements/UsersList";
 
+export default {
+  components: { UsersList }
 }
 </script>
 
 <style lang="scss" scoped>
   .dashboard {
-    padding-bottom: 30px;
-
     &__welcome {
-      font-size: 24px;
-      font-weight: bold;
-      color: #000000;
-      padding: 10px;
       height: 40px;
       line-height: 40px;
-      margin-bottom: 10px;
+      margin-top: 0;
     }
   }
 </style>

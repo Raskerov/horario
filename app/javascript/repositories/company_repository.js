@@ -1,5 +1,5 @@
 import httpClient from '../utils/http_client';
-import {snakeCase} from "../utils/convert_keys";
+import { snakeCase } from "../utils/convert_keys";
 
 export default {
   async update(params) {

@@ -43,6 +43,12 @@ pl:
     info: Wpisz swój adres email, aby otrzymać instrukcję do zresetowania hasła
   dashboard:
     welcome: 'Witaj, %{user_name}!'
+  users:
+    title: Lista pracowników
+    table_headers:
+      status: Status
+      full_name: Imię pracownika
+      actions: Akcje
   settings:
     title: Ustawienia
     text: Tutaj możesz zaaktualizować swoje dane
