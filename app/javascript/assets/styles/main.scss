@@ -1,2 +1,20 @@
 @import 'colors';
 @import 'button';
+
+.item-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.item {
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  margin: 10px 0;
+
+  &--big {
+    width: 100%;
+    height: 500px;
+  }
+}

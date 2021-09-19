@@ -41,6 +41,8 @@ pl:
   forgot_password:
     welcome: Zapomniałeś hasła?
     info: Wpisz swój adres email, aby otrzymać instrukcję do zresetowania hasła
+  dashboard:
+    welcome: 'Witaj, %{user_name}!'
   settings:
     title: Ustawienia
     text: Tutaj możesz zaaktualizować swoje dane

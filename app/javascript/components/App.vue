@@ -25,5 +25,6 @@ export default {
     box-sizing: border-box;
     background-color: #e2e2e2;
     height: calc(100vh - 50px);
+    overflow-y: scroll;
   }
 </style>
