@@ -47,7 +47,7 @@ pl:
     title: Lista pracowników
     table_headers:
       status: Status
-      full_name: Imię pracownika
+      fullName: Imię pracownika
       actions: Akcje
   settings:
     title: Ustawienia

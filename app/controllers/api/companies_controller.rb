@@ -6,21 +6,24 @@ module Api
     before_action :password_confirmation!, only: :destroy
 
     def show
-      render json: current_user.company
+      render json: current_company
+    end
+
+    def users
+      render json: current_company.users
     end
 
     def update
-      company = current_user.company
-      if company.update!(company_params)
-        render json: company
+      if current_company.update!(company_params)
+        current_company.reload!
+        render json: current_company
       else
         render_json_error({ name: 'Update not available', details: '', status: 500 })
       end
     end
 
     def destroy
-      company = current_user.company
-      company.destroy!
+      current_company.destroy!
 
       head :ok
     end

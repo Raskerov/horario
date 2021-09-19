@@ -2,7 +2,7 @@
   <div>
     <NavigationBar />
 
-    <div class="app-content">
+    <div v-if="$auth.user" class="app-content">
       <RouterView />
     </div>
   </div>

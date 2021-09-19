@@ -4,4 +4,6 @@ class UserSerializer < ActiveModel::Serializer
   def company
     object.company.name
   end
+
+  # TODO: User status
 end

@@ -7,6 +7,7 @@ import router from './routers/app';
 import i18n from './config/i18n';
 
 import App from './components/App.vue';
+import store from './store';
 import auth from './utils/auth';
 import roles from './utils/roles';
 
@@ -19,6 +20,7 @@ Vue.use(VueSimpleAlert);
 
 const app = new Vue({
   router,
+  store,
   i18n,
   render: h => h(App),
 }).$mount('#app');

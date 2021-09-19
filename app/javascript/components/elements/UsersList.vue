@@ -7,22 +7,29 @@
       <div class="users-table__row users-table__row--headers">
         <div
             v-for="column in columns"
-            :key="column"
+            :key="`header${column}`"
             class="users-table__column"
             :class="`users-table__column--${column}`"
         >
           {{ $t(`users.table_headers.${column}`) }}
         </div>
       </div>
-      <!-- Example -->
-      <div v-for="n in [1,2,3,4,5,6,7,8,9,10]" :key="n" class="users-table__row">
+      <div v-for="user in users" :key="user.id" class="users-table__row">
         <div
             v-for="column in columns"
             :key="column"
             class="users-table__column"
             :class="`users-table__column--${column}`"
         >
-          {{ $t(`users.table_headers.${column}`) }}
+          <div v-if="column === 'status'">
+            USER STATUS
+          </div>
+          <div v-else-if="column === 'actions'">
+            CTA BUTTONS
+          </div>
+          <div v-else>
+            {{ user[column] }}
+          </div>
         </div>
       </div>
     </div>
@@ -30,15 +37,23 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
   computed: {
+    ...mapState({
+      companyUsers: state => state.company.users,
+    }),
     columns() {
-      return ['status', 'full_name', 'actions'];
+      return ['status', 'fullName', 'actions'];
     },
-    async users() {
-      // TODO: Get current company users, add to vuex probably
+    users() {
+      return this.companyUsers;
     },
   },
+  created() {
+    this.$store.dispatch('company/getCompanyUsers');
+  }
 }
 </script>
 
@@ -85,14 +100,17 @@ export default {
 
     &--status {
       width: 15%;
+      overflow-x: scroll;
     }
 
-    &--full_name {
+    &--fullName {
       width: 60%;
+      overflow-x: scroll;
     }
 
     &--actions {
       width: 25%;
+      overflow-x: scroll;
     }
   }
 </style>

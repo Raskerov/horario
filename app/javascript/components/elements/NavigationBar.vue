@@ -45,7 +45,6 @@
 export default {
   methods: {
     async logout() {
-      console.log(this);
       await this.$auth.logout();
       window.location = '/auth/login';
     },

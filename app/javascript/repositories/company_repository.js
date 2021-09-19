@@ -2,6 +2,12 @@ import httpClient from '../utils/http_client';
 import { snakeCase } from "../utils/convert_keys";
 
 export default {
+  async getUsers() {
+    const response = await httpClient.get(`/company/users`);
+
+    return response.data;
+  },
+
   async update(params) {
     const formData = new FormData();
 

@@ -8,6 +8,10 @@ module Api
 
     private
 
+    def current_company
+      current_user.company
+    end
+
     def password_confirmation!
       return if current_user.valid_password?(params[:password])
 
