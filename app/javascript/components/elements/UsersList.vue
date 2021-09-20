@@ -24,8 +24,11 @@
           <div v-if="column === 'status'">
             USER STATUS
           </div>
-          <div v-else-if="column === 'actions'">
-            CTA BUTTONS
+          <div v-else-if="column === 'actions'" class="users-table__cta">
+            <!-- Select dropdown for roles -->
+            <button class="button" @click="deleteUser(user)">
+              {{ $t('users.table.delete') }}
+            </button>
           </div>
           <div v-else>
             {{ user[column] }}
@@ -53,7 +56,12 @@ export default {
   },
   created() {
     this.$store.dispatch('company/getCompanyUsers');
-  }
+  },
+  methods: {
+    deleteUser(user) {
+      this.$store.dispatch('employees/removeUser', user)
+    },
+  },
 }
 </script>
 
@@ -111,6 +119,22 @@ export default {
     &--actions {
       width: 25%;
       overflow-x: scroll;
+    }
+  }
+
+  .users-table__cta {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+
+    button {
+      margin: 0 5px;
+
+      &:first-child {
+        margin-left: 0;
+      }
     }
   }
 </style>

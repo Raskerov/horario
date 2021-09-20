@@ -49,6 +49,9 @@ pl:
       status: Status
       fullName: Imię pracownika
       actions: Akcje
+    table:
+      edit: Edytuj
+      delete: Usuń
   settings:
     title: Ustawienia
     text: Tutaj możesz zaaktualizować swoje dane

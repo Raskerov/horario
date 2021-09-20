@@ -23,9 +23,8 @@ Rails.application.routes.draw do
 
   namespace :api do
     resource :user, only: [:show, :update]
-    resource :company, only: [:show, :update, :destroy] do
-      get :users, on: :member
-    end
+    resource :company, only: [:show, :update, :destroy]
+    resources :employees, only: [:index, :create, :update, :destroy]
   end
 
   root to: 'app/application#index'

@@ -1,4 +1,4 @@
-import companyRepository from '../repositories/company_repository';
+import employeesRepository from '../repositories/employees_repository';
 
 const getters = {};
 
@@ -10,7 +10,7 @@ const mutations = {
 
 const actions = {
   async getCompanyUsers(context) {
-    const users = await companyRepository.getUsers();
+    const users = await employeesRepository.getUsers();
 
     context.commit('setUsers', users);
   },
