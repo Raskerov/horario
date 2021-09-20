@@ -8,7 +8,7 @@ class CompanyDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    company_users: Field::HasMany,
+    users: Field::HasMany,
     id: Field::Number,
     name: Field::String,
     created_at: Field::DateTime,
@@ -23,13 +23,13 @@ class CompanyDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
     id
     name
-    company_users
+    users
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-    company_users
+    users
     id
     name
     created_at
