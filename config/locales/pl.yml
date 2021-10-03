@@ -48,10 +48,19 @@ pl:
     table_headers:
       status: Status
       fullName: Imię pracownika
+      role: Funkcja
       actions: Akcje
     table:
-      edit: Edytuj
+      roles: Edytuj rolę
       delete: Usuń
+    fields:
+      change_role: Zmień rolę użytkownika
+      role: Rola użytkownika
+      confirm: Potwierdź
+    roles:
+      owner: Właściciel
+      manager: Manager
+      worker: Pracownik
   settings:
     title: Ustawienia
     text: Tutaj możesz zaaktualizować swoje dane

@@ -24,8 +24,13 @@
           <div v-if="column === 'status'">
             USER STATUS
           </div>
+          <div v-else-if="column === 'role'">
+            {{ $t(`users.roles.${user.role}`) }}
+          </div>
           <div v-else-if="column === 'actions'" class="users-table__cta">
-            <!-- Select dropdown for roles -->
+            <button class="button" @click="choseUserRole(user)">
+              {{ $t('users.table.roles') }}
+            </button>
             <button class="button" @click="deleteUser(user)">
               {{ $t('users.table.delete') }}
             </button>
@@ -48,16 +53,39 @@ export default {
       companyUsers: state => state.company.users,
     }),
     columns() {
-      return ['status', 'fullName', 'actions'];
+      return ['status', 'fullName', 'role', 'actions'];
     },
     users() {
       return this.companyUsers;
+    },
+    userRoles() {
+      return {
+        'owner': this.$t('users.roles.owner'),
+        'manager': this.$t('users.roles.manager'),
+        'worker': this.$t('users.roles.worker'),
+      };
     },
   },
   created() {
     this.$store.dispatch('company/getCompanyUsers');
   },
   methods: {
+    async choseUserRole(user) {
+      this.$fire({
+        text: `${this.$t('users.fields.change_role')}`,
+        input: 'select',
+        inputValue: user.role,
+        inputOptions: (this.userRoles || 'worker'),
+        showCancelButton: true,
+        buttonsStyling: false,
+        confirmButtonText: `${this.$t('users.fields.confirm')}`,
+        confirmButtonClass: 'button button--alert',
+        cancelButtonClass: 'button button--alert button--reverse-color',
+        cancelButtonText: `${this.$t('settings.abort')}`
+      }).then((input) => {
+        this.$store.dispatch('employees/changeRole', { user, role: input.value });
+      });
+    },
     deleteUser(user) {
       this.$store.dispatch('employees/removeUser', user)
     },
@@ -112,7 +140,12 @@ export default {
     }
 
     &--fullName {
-      width: 60%;
+      width: 50%;
+      overflow-x: scroll;
+    }
+
+    &--role {
+      width: 10%;
       overflow-x: scroll;
     }
 

@@ -12,6 +12,7 @@ class UserDashboard < Administrate::BaseDashboard
     id: Field::Number,
     full_name: Field::String,
     email: Field::String,
+    role: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     encrypted_password: Field::String,
@@ -31,6 +32,7 @@ class UserDashboard < Administrate::BaseDashboard
     id
     full_name
     company
+    role
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -40,6 +42,7 @@ class UserDashboard < Administrate::BaseDashboard
     id
     full_name
     email
+    role
     created_at
     updated_at
     admin
@@ -52,6 +55,7 @@ class UserDashboard < Administrate::BaseDashboard
     company
     full_name
     email
+    role
     password
     admin
   ].freeze

@@ -8,7 +8,13 @@ const actions = {
   async removeUser(context, user) {
     await employeesRepository.removeUser(user.id);
 
-    await this.$store.dispatch('company/getCompanyUsers');
+    await context.dispatch('company/getCompanyUsers', {}, { root: true });
+  },
+
+  async changeRole(context, payload) {
+    await employeesRepository.changeRole(payload.user.id, payload.role);
+
+    await context.dispatch('company/getCompanyUsers', {}, { root: true });
   },
 };
 
