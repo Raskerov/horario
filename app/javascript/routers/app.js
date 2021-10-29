@@ -2,10 +2,11 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Dashboard from '../components/pages/Dashboard.vue';
 import Settings from '../components/pages/Settings.vue'
-import SettingsProfile from "../components/pages/settings/Profile";
-import SettingsPassword from "../components/pages/settings/Password";
-import SettingsCompany from "../components/pages/settings/Company";
-import SettingsInvitations from "../components/pages/settings/Invitations";
+import SettingsProfile from "../components/pages/settings/Profile.vue";
+import SettingsPassword from "../components/pages/settings/Password.vue";
+import SettingsCompany from "../components/pages/settings/Company.vue";
+import SettingsInvitations from "../components/pages/settings/Invitations.vue";
+import Messages from "../components/pages/Messages.vue";
 
 Vue.use(VueRouter);
 
@@ -45,6 +46,11 @@ const app = new VueRouter({
                 },
             ],
         },
+        {
+            path: '/messages',
+            name: 'messages',
+            component: Messages,
+        }
     ],
 });
 

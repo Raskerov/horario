@@ -11,15 +11,15 @@
       </RouterLink>
     </div>
     <div class="settings__content">
-      <div class="settings__item">
-        <div class="settings__content__title">
+      <div class="item">
+        <div class="section-title">
           {{ $t('settings.title') }}
         </div>
-        <div class="settings__content__text">
+        <div class="section-text">
           {{ $t('settings.text') }}
         </div>
       </div>
-      <RouterView class="settings__item" />
+      <RouterView class="item" />
     </div>
   </div>
 </template>
@@ -89,23 +89,5 @@ export default {
   .settings__content {
     padding: 30px 60px;
     flex: 1;
-  }
-
-  .settings__item {
-    padding: 25px;
-    background-color: #FFFFFF;
-    border-radius: 12px;
-    margin-bottom: 20px;
-  }
-
-  .settings__content__title {
-    font-size: 36px;
-    font-weight: bold;
-    color: #000000;
-  }
-
-  .settings__content__text {
-    font-size: 18px;
-    color: #000000;
   }
 </style>

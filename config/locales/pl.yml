@@ -85,3 +85,5 @@ pl:
         label: Nazwa firmy
         delete: Usuń firmę
         confirm_delete: Czy na pewno chcesz usunąć swoją firmę z aplikacji?
+  messages:
+    title: Wiadomości
