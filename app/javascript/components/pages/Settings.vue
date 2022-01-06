@@ -87,7 +87,7 @@ export default {
   }
 
   .settings__content {
-    padding: 30px 60px;
+    padding: 30px;
     flex: 1;
   }
 </style>

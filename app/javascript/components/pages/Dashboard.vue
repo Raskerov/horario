@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="item dashboard__welcome section-title">
+    <div class="item section-title">
       {{ $t('dashboard.welcome', { user_name: $auth.user.fullName }) }}
     </div>
     <div class="item-row">
@@ -18,11 +18,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .dashboard {
-    &__welcome {
-      height: 40px;
-      line-height: 40px;
-      margin-top: 0;
-    }
-  }
 </style>

@@ -26,6 +26,8 @@ Rails.application.routes.draw do
     resources :employees, only: [:index, :destroy] do
       put :change_role, on: :member
     end
+    resources :messages, only: [:index, :create]
+    get '/messages/conversation', to: 'messages#conversation', as: 'conversation'
   end
 
   root to: 'app/application#index'

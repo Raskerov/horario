@@ -87,3 +87,4 @@ pl:
         confirm_delete: Czy na pewno chcesz usunąć swoją firmę z aplikacji?
   messages:
     title: Wiadomości
+    input_placeholder: Napisz wiadomość i naciśnij Enter aby wysłać
