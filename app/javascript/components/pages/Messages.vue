@@ -108,7 +108,6 @@ export default {
 
   .messages__inbox {
     width: 20%;
-    max-width: 300px;
     height: calc(100vh - 274px);
     margin-right: 30px;
 
@@ -136,8 +135,7 @@ export default {
   }
 
   .messages__conversation {
-    flex-grow: 1;
-    max-width: calc(100% - 300px);
+    width: calc(80% - 30px);
     height: calc(100vh - 275px);
 
     &__content {
@@ -145,6 +143,13 @@ export default {
       overflow-y: auto;
       width: 100%;
       height: calc(100% - 50px);
+      box-sizing: border-box;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
     }
 
     &__input {
@@ -193,7 +198,7 @@ export default {
     &__text {
       display: block;
       width: fit-content;
-      max-width: 40%;
+      max-width: 50%;
       border-radius: 12px;
       margin: 2px 0 20px 0;
       padding: 10px;
