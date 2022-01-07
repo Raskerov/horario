@@ -136,22 +136,22 @@ export default {
 
     &--status {
       width: 15%;
-      overflow-x: scroll;
+      overflow-x: auto;
     }
 
     &--fullName {
       width: 50%;
-      overflow-x: scroll;
+      overflow-x: auto;
     }
 
     &--role {
       width: 10%;
-      overflow-x: scroll;
+      overflow-x: auto;
     }
 
     &--actions {
       width: 25%;
-      overflow-x: scroll;
+      overflow-x: auto;
     }
   }
 
