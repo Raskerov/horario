@@ -23,9 +23,13 @@ Rails.application.routes.draw do
   namespace :api do
     resource :user, only: [:show, :update]
     resource :company, only: [:show, :update, :destroy]
-    resources :employees, only: [:index, :destroy] do
+
+    resources :employees, only: [:index, :create, :destroy] do
       put :change_role, on: :member
     end
+    get 'accept_invitations/fetch_confirmation/:token', to: 'accept_invitations#fetch_confirmation'
+    put 'accept_invitations/register/:token', to: 'accept_invitations#register'
+
     resources :messages, only: [:index, :create]
     get '/messages/conversation', to: 'messages#conversation', as: 'conversation'
   end

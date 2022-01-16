@@ -33,11 +33,11 @@ pl:
     company:
       label: Firma
       placeholder: Nazwa firmy
-    check_your_email_title: One last step!
-    check_your_email: Check your email and click to confirm your account.
+    edit_email: Możesz zmienić swój adres e-mail później w ustawieniach konta
     already_have_account: Masz już konto?
     create_account: Stwórz konto
-    please_log_in: You can now log in\
+    invitation: Zostałeś zaproszony do dołączenia do firmy %{company}
+    please_log_in: Możesz się teraz zalogować
   forgot_password:
     welcome: Zapomniałeś hasła?
     info: Wpisz swój adres email, aby otrzymać instrukcję do zresetowania hasła
@@ -49,6 +49,7 @@ pl:
       status: Status
       fullName: Imię pracownika
       role: Funkcja
+      email: Adres e-mail
       actions: Akcje
     table:
       roles: Edytuj rolę
@@ -61,6 +62,10 @@ pl:
       owner: Właściciel
       manager: Manager
       worker: Pracownik
+    invite:
+      label: Dodaj pracownika
+      placeholder: Wpisz adres e-mail tutaj
+      submit: Dodaj
   settings:
     title: Ustawienia
     text: Tutaj możesz zaaktualizować swoje dane
@@ -88,3 +93,8 @@ pl:
   messages:
     title: Wiadomości
     input_placeholder: Napisz wiadomość i naciśnij Enter aby wysłać
+  invitation_mailer:
+    subject: Dołącz do twojego zespołu w Horario
+    invitation_text: Oto twoje zaproszenie do aplikacji Horario.
+    invitation_text_2: Kliknij przycisk poniżej aby dołączyć do reszty twojego zespołu w firmie %{company}
+    button: Dołącz

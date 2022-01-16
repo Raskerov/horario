@@ -1,0 +1,5 @@
+<div><%= t('invitation_mailer.invitation_text')%></div>
+<div><%= t('invitation_mailer.invitation_text_2', company: @company.name)%></div>
+<div>
+  <a class="email__button" href="<%= @url %>"><span style="color: #ffffff"><%= t('invitation_mailer.button') %></a><br/>
+</div>

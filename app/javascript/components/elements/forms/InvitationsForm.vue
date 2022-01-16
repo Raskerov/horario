@@ -1,16 +1,16 @@
 <template>
-  <form @submit.prevent="update">
-<!--    <InputBuilder-->
-<!--        v-model.lazy=""-->
-<!--        name="fullName"-->
-<!--        :label="$t('register.company.label')"-->
-<!--        :placeholder="$t('register.company.placeholder')"-->
-<!--        :errors="[]"-->
-<!--        required-->
-<!--    />-->
+  <form @submit.prevent="sendInvite">
+    <InputBuilder
+        class="form__input"
+        v-model.lazy="form.fields.email"
+        name="email"
+        :label="$t('users.invite.label')"
+        :placeholder="$t('users.invite.placeholder')"
+        :errors="[]"
+    />
 
     <button type="submit" class="button">
-      {{ $t('settings.update_user') }}
+      {{ $t('users.invite.submit') }}
     </button>
   </form>
 </template>
@@ -18,6 +18,7 @@
 <script>
 import InputBuilder from "../common/InputBuilder";
 import InputError from "../common/InputError";
+import InvitationForm from "../../../forms/invitation"
 
 export default {
   components: {
@@ -26,14 +27,22 @@ export default {
   },
   data() {
     return {
-      // form: new InvitationsForm(),
+      form: new InvitationForm(),
     };
   },
   methods: {
-    async update() {
-      //  Handle sending invite
+    async sendInvite() {
+      await this.form.submit();
+      await this.$store.dispatch('company/getCompanyUsers');
+      this.form.fields.email = '';
     },
   },
 
 }
 </script>
+<style lang="scss" scoped>
+  .form__input {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+</style>

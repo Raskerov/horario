@@ -9,6 +9,12 @@ module Api
       render json: current_company.users
     end
 
+    def create
+      UserInvitationService.new(params[:email], current_user).call
+
+      head :ok
+    end
+
     def destroy
       if current_user != @employee
         @employee.destroy!

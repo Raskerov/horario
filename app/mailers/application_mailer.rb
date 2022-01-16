@@ -1,4 +1,8 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'from@example.com'
+  Rails.application.routes.default_url_options[:host] = ENV['HOST']
+  prepend_view_path 'app/views/mailers'
+
+  default from: 'no-reply@horario'
+
   layout 'mailer'
 end

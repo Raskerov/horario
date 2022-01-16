@@ -41,19 +41,22 @@
         </div>
       </div>
     </div>
+
+    <InvitationsForm class="users__invite"/>
   </div>
 </template>
-
 <script>
 import { mapState } from 'vuex';
+import InvitationsForm from "./forms/InvitationsForm";
 
 export default {
+  components: {InvitationsForm},
   computed: {
     ...mapState({
       companyUsers: state => state.company.users,
     }),
     columns() {
-      return ['status', 'fullName', 'role', 'actions'];
+      return ['status', 'fullName', 'email', 'role', 'actions'];
     },
     users() {
       return this.companyUsers;
@@ -140,17 +143,22 @@ export default {
     }
 
     &--fullName {
-      width: 50%;
+      width: 45%;
       overflow-x: auto;
+    }
+
+    &--email {
+      width: 15%;
+      overflow-x: hidden;
     }
 
     &--role {
       width: 10%;
-      overflow-x: auto;
+      overflow-x: hidden;
     }
 
     &--actions {
-      width: 25%;
+      width: 15%;
       overflow-x: auto;
     }
   }
@@ -169,5 +177,9 @@ export default {
         margin-left: 0;
       }
     }
+  }
+
+  .users__invite {
+    max-width: 400px;
   }
 </style>
