@@ -69,5 +69,10 @@ export default {
         color: #FFFFFF;
       }
     }
+
+    .router-link-exact-active {
+      background-color: #730E15;
+      color: #FFFFFF !important;
+    }
   }
 </style>
