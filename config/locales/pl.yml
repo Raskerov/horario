@@ -100,3 +100,8 @@ pl:
     button: Dołącz
   schedule:
     title: Grafik pracy
+    navigation:
+      overview: Przegląd grafiku
+      create: Stwórz nowy grafik
+      edit: Edytuj istniejące grafiki
+      freedays: Dni wolne

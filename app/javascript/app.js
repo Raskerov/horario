@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueAxios from 'vue-axios';
 import VueSimpleAlert from 'vue-simple-alert';
+import VCalendar from 'v-calendar';
 
 import httpClient from './utils/http_client';
 import router from './routers/app';
@@ -17,6 +18,7 @@ Vue.axios.defaults.baseURL = '/api/';
 Vue.use(auth, {});
 Vue.use(roles, {});
 Vue.use(VueSimpleAlert);
+Vue.use(VCalendar);
 
 const app = new Vue({
   router,

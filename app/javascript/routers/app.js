@@ -8,6 +8,10 @@ import SettingsCompany from "../components/pages/settings/Company.vue";
 import SettingsInvitations from "../components/pages/settings/Invitations.vue";
 import Messages from "../components/pages/Messages.vue";
 import Employees from "../components/pages/Employees.vue";
+import ScheduleOverview from "../components/pages/schedule/Overview.vue";
+import ScheduleCreate from "../components/pages/schedule/Create.vue";
+import ScheduleEdit from "../components/pages/schedule/Edit.vue";
+import ScheduleFreedays from "../components/pages/schedule/Freedays.vue";
 
 Vue.use(VueRouter);
 
@@ -16,9 +20,31 @@ const app = new VueRouter({
     base: '/app',
     routes: [
         {
-            path: '/',
+            path: '/schedule',
             name: 'schedule',
             component: Schedule,
+            children: [
+                {
+                    path: 'overview',
+                    name: 'schedule_overview',
+                    component: ScheduleOverview,
+                },
+                {
+                    path: 'create',
+                    name: 'schedule_create',
+                    component: ScheduleCreate,
+                },
+                {
+                    path: 'edit',
+                    name: 'schedule_edit',
+                    component: ScheduleEdit,
+                },
+                {
+                    path: 'freedays',
+                    name: 'schedule_freedays',
+                    component: ScheduleFreedays,
+                },
+            ]
         },
         {
             path: '/messages',
