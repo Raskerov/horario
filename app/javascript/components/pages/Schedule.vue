@@ -1,10 +1,10 @@
 <template>
   <div>
     <div class="item section-title">
-      {{ $t('dashboard.welcome', { user_name: $auth.user.fullName }) }}
+      {{ $t('schedule.title') }}
     </div>
     <div class="item-row">
-      <UsersList class="item item--big" />
+
     </div>
   </div>
 </template>

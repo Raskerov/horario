@@ -1,8 +1,5 @@
 <template>
   <div>
-    <div class="section-title">
-      {{ $t('users.title') }}
-    </div>
     <div class="users-table">
       <div class="users-table__row users-table__row--headers">
         <div
@@ -98,7 +95,6 @@ export default {
 
 <style lang="scss" scoped>
   .users-table {
-    margin-top: 15px;
     box-sizing: border-box;
     width: 100%;
   }
@@ -110,7 +106,7 @@ export default {
     width: 100%;
     display: flex;
     flex-direction: row;
-    overflow: hidden;
+    overflow: auto;
 
     &:first-child {
       border-radius: 12px 12px 0 0;
@@ -159,6 +155,7 @@ export default {
 
     &--actions {
       width: 15%;
+      min-width: 210px;
       overflow-x: auto;
     }
   }

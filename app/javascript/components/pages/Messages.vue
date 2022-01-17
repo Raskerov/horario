@@ -61,7 +61,9 @@ export default {
       users: state => state.company.users,
     }),
     inboxUsers() {
-      return _.filter(this.users, (user) => this.$auth.user.id !== user.id)
+      return _.filter(this.users, (user) => {
+        return (this.$auth.user.id !== user.id) && user.joined;
+      });
     }
   },
   async created() {

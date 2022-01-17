@@ -2,16 +2,16 @@
   <div class="navigation-bar__wrapper">
     <div class="navigation-bar__wrapper__left-side">
       <RouterLink
-        :to="{ name: `dashboard` }"
+        :to="{ name: `schedule` }"
         class="navigation-bar__nav-item"
       >
-        {{ $t('navigation.dashboard') }}
+        {{ $t('navigation.schedule') }}
       </RouterLink>
       <RouterLink
-          :to="{ name: `work_schedule` }"
+          :to="{ name: `employees` }"
           class="navigation-bar__nav-item"
       >
-        {{ $t('navigation.work_schedule') }}
+        {{ $t('navigation.employees') }}
       </RouterLink>
       <RouterLink
           :to="{ name: `messages` }"

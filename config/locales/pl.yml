@@ -1,7 +1,7 @@
 pl:
   navigation:
-    dashboard: Strona główna
-    work_schedule: Grafik pracy
+    schedule: Grafik pracy
+    employees: Pracownicy
     messages: Wiadomości
     admin: Admin
     profile: Mój profil
@@ -98,3 +98,5 @@ pl:
     invitation_text: Oto twoje zaproszenie do aplikacji Horario.
     invitation_text_2: Kliknij przycisk poniżej aby dołączyć do reszty twojego zespołu w firmie %{company}
     button: Dołącz
+  schedule:
+    title: Grafik pracy

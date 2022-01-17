@@ -6,7 +6,7 @@ module Api
     before_action :set_employee, only: %i[destroy change_role]
 
     def index
-      render json: current_company.users
+      render json: current_company.users.order(:role)
     end
 
     def create
