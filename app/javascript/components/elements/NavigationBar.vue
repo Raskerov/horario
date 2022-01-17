@@ -2,7 +2,7 @@
   <div class="navigation-bar__wrapper">
     <div class="navigation-bar__wrapper__left-side">
       <RouterLink
-        :to="{ name: `schedule` }"
+        :to="{ name: `schedule_overview` }"
         class="navigation-bar__nav-item"
       >
         {{ $t('navigation.schedule') }}
