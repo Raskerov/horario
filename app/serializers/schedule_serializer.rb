@@ -1,4 +1,4 @@
-class UserSerializer < ActiveModel::Serializer
+class ScheduleSerializer < ActiveModel::Serializer
   attributes :name, :start_hour, :end_hour, :weekdays, :user_ids
 
   def user_ids

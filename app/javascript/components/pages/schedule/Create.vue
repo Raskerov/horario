@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form class="create__form" @submit.prevent="createForm">
+    <form class="create__form" @submit.prevent="createSchedule">
       <InputBuilder
         v-model.lazy="form.fields.name"
         name="name"
@@ -29,7 +29,7 @@
           {{ $t('schedule.form.weekdays_label') }}
         </div>
         <div v-for="day in weekdays">
-          <input type="checkbox" :value="weekdaySelected(day)" @change="updateWeekdays($event, day)">
+          <input type="checkbox" :value="weekdaySelected(day)" @change="updateWeekdays($event.target.checked, day)">
           <label :for="day">{{ $t(`schedule.form.weekdays.${day}`) }}</label>
         </div>
       </div>
@@ -39,7 +39,7 @@
           {{ $t('schedule.form.workers') }}
         </div>
         <div v-for="worker in workers">
-          <input type="checkbox" :value="workerSelected(worker)" @change="updateWorkers($event, worker)">
+          <input type="checkbox" :value="workerSelected(worker)" @change="updateWorkers($event.target.checked, worker)">
           <label :for="worker">{{ workerName(worker) }}</label>
         </div>
       </div>
@@ -82,7 +82,7 @@ export default {
     }
   },
   methods: {
-    async createForm() {
+    async createSchedule() {
       await this.form.submit();
       this.$router.push({name: 'schedule_overview'})
     },

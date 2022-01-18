@@ -15,10 +15,11 @@ module Api
 
     def create
       @schedule = current_company.schedules.new(schedule_params)
+      @schedule.weekdays = allowed_params[:weekdays].split(',')
 
       if @schedule.save!
-        params[:user_ids].each do |user_id|
-          UserSchedule.create!(user_id: user_id, schedule: @schedule)
+        allowed_params[:user_ids].split(',').each do |user_id|
+          UserSchedule.create!(user_id: user_id.to_i, schedule: @schedule)
         end
         render json: @schedule
       else
@@ -35,7 +36,11 @@ module Api
     private
 
     def schedule_params
-      params.permit(:name, :start_hour, :end_hour, :weekdays)
+      params.permit(:name, :start_hour, :end_hour)
+    end
+
+    def allowed_params
+      params.permit(:user_ids, :weekdays)
     end
 
     def get_schedule
