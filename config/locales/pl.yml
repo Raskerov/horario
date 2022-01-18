@@ -105,3 +105,18 @@ pl:
       create: Stwórz nowy grafik
       edit: Edytuj istniejące grafiki
       freedays: Dni wolne
+    form:
+      name: Nazwa grafiku
+      create: Utwórz grafik
+      start_hour: Godzina rozpoczęcia
+      end_hour: Godzina zakończenia
+      weekdays_label: Dni tygodnia
+      workers: Przydzieleni pracownicy
+      weekdays:
+        monday: Poniedziałek
+        tuesday: Wtorek
+        wednesday: Środa
+        thursday: Czwartek
+        friday: Piątek
+        saturday: Sobota
+        sunday: Niedziela

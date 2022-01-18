@@ -2,6 +2,7 @@ import Vue from 'vue';
 import VueAxios from 'vue-axios';
 import VueSimpleAlert from 'vue-simple-alert';
 import VCalendar from 'v-calendar';
+import VueTimepicker from 'vue2-timepicker'
 
 import httpClient from './utils/http_client';
 import router from './routers/app';
@@ -19,6 +20,7 @@ Vue.use(auth, {});
 Vue.use(roles, {});
 Vue.use(VueSimpleAlert);
 Vue.use(VCalendar);
+Vue.use(VueTimepicker);
 
 const app = new Vue({
   router,

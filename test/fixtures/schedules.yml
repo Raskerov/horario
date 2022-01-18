@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  start_hour: MyString
+  end_hour: MyString
+  weekdays: 
+  company: one
+  user_schedule: one
+
+two:
+  name: MyString
+  start_hour: MyString
+  end_hour: MyString
+  weekdays: 
+  company: two
+  user_schedule: two

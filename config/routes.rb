@@ -32,6 +32,8 @@ Rails.application.routes.draw do
 
     resources :messages, only: [:index, :create]
     get '/messages/conversation', to: 'messages#conversation', as: 'conversation'
+
+    resources :schedules, only: [:index, :show, :create, :destroy]
   end
 
   root to: 'app/application#index'
