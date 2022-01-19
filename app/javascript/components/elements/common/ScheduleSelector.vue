@@ -34,7 +34,7 @@
             {{ $t('schedule.days')}}
           </div>
           <div class="property__value">
-            {{ scheduleDays(schedule) }}
+            {{ schedule.weekdays.length }}
           </div>
         </div>
 
@@ -72,11 +72,6 @@ export default {
     scheduleHours(schedule) {
       return `${schedule.startHour} - ${schedule.endHour}`
     },
-    scheduleDays(schedule) {
-      return schedule.weekdays.map((day) => {
-        return this.$t(`schedule.form.weekdays.${day}`);
-      }).join(' ');
-    },
     selectSchedule(schedule) {
       this.$emit('input', schedule)
     },
@@ -91,7 +86,7 @@ export default {
 
 <style lang="scss" scoped>
   .schedules-container--selected {
-    height: 100px;
+    height: 90px;
     overflow-y: scroll;
   }
 
@@ -136,5 +131,6 @@ export default {
 
   .property__value {
     padding: 0 10px 0 0;
+    white-space: nowrap;
   }
 </style>

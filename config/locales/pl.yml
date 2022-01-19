@@ -124,5 +124,5 @@ pl:
         sunday: Niedziela
     select_schedule: Wybierz grafik
     hours: Godziny
-    days: Dni
+    days: Dni w tygodniu
     workers_amount: Ilość przydzielonych pracowników
