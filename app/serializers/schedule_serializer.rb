@@ -1,5 +1,5 @@
 class ScheduleSerializer < ActiveModel::Serializer
-  attributes :name, :start_hour, :end_hour, :weekdays, :user_ids
+  attributes :id, :name, :start_hour, :end_hour, :weekdays, :user_ids
 
   def user_ids
     object.user_schedules.pluck(:user_id)

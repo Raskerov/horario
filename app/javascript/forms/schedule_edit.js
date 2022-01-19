@@ -1,8 +1,10 @@
 import BaseForm from './base';
 import scheduleRepository from '../repositories/schedule_repository';
+import _ from "lodash";
 
-export default class ScheduleCreate extends BaseForm {
+export default class ScheduleEdit extends BaseForm {
   fields = {
+    id: null,
     name: '',
     startHour: '00:00',
     endHour: '00:00',
@@ -11,10 +13,8 @@ export default class ScheduleCreate extends BaseForm {
   };
 
   action() {
-    this.fields.startHour = `${this.fields.startHour.HH}:${this.fields.startHour.mm}`;
-    this.fields.endHour = `${this.fields.endHour.HH}:${this.fields.endHour.mm}`;
     this.fields.weekdays = this.fields.weekdays.toString()
 
-    return scheduleRepository.create(this.fields);
+    return scheduleRepository.update(this.fields.id, this.fields);
   }
 }

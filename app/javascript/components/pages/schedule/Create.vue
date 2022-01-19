@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form class="create__form" @submit.prevent="createSchedule">
+    <form class="create-form" @submit.prevent="createSchedule">
       <InputBuilder
         v-model.lazy="form.fields.name"
         name="name"
@@ -9,42 +9,42 @@
         required
       />
 
-      <div class="create__form__hour-pickers">
-        <div class="create__form__hour-picker">
-          <div class="create__form__label">
+      <div class="create-form__hour-pickers">
+        <div class="create-form__hour-picker">
+          <div class="create-form__label">
             {{ $t('schedule.form.start_hour') }}
           </div>
           <vue-timepicker format="HH:mm" v-model="form.fields.startHour" minute-interval="15"/>
         </div>
-        <div class="create__form__hour-picker">
-          <div class="create__form__label">
+        <div class="create-form__hour-picker">
+          <div class="create-form__label">
             {{ $t('schedule.form.end_hour') }}
           </div>
           <vue-timepicker format="HH:mm" v-model="form.fields.endHour" minute-interval="15"/>
         </div>
       </div>
 
-      <div class="create__form__checkboxes">
-        <div class="create__form__label">
+      <div class="create-form__checkboxes">
+        <div class="create-form__label">
           {{ $t('schedule.form.weekdays_label') }}
         </div>
         <div v-for="day in weekdays">
-          <input type="checkbox" :value="weekdaySelected(day)" @change="updateWeekdays($event.target.checked, day)">
+          <input type="checkbox" :checked="weekdaySelected(day)" @change="updateWeekdays($event.target.checked, day)">
           <label :for="day">{{ $t(`schedule.form.weekdays.${day}`) }}</label>
         </div>
       </div>
 
-      <div class="create__form__checkboxes">
-        <div class="create__form__label">
+      <div class="create-form__checkboxes">
+        <div class="create-form__label">
           {{ $t('schedule.form.workers') }}
         </div>
         <div v-for="worker in workers">
-          <input type="checkbox" :value="workerSelected(worker)" @change="updateWorkers($event.target.checked, worker)">
+          <input type="checkbox" :checked="workerSelected(worker)" @change="updateWorkers($event.target.checked, worker)">
           <label :for="worker">{{ workerName(worker) }}</label>
         </div>
       </div>
 
-      <button type="submit" class="button create__form__submit-button">
+      <button type="submit" class="button">
         {{ $t('schedule.form.create') }}
       </button>
     </form>
@@ -117,7 +117,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .create__form {
+  .create-form {
     &__hour-pickers {
       display: flex;
       flex-direction: row;

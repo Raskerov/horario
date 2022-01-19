@@ -108,6 +108,8 @@ pl:
     form:
       name: Nazwa grafiku
       create: Utwórz grafik
+      update: Aktualizuj grafik
+      delete: Usuń grafik
       start_hour: Godzina rozpoczęcia
       end_hour: Godzina zakończenia
       weekdays_label: Dni tygodnia
@@ -120,3 +122,7 @@ pl:
         friday: Piątek
         saturday: Sobota
         sunday: Niedziela
+    select_schedule: Wybierz grafik
+    hours: Godziny
+    days: Dni
+    workers_amount: Ilość przydzielonych pracowników

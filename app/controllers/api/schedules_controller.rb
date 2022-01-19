@@ -3,7 +3,7 @@
 module Api
   class SchedulesController < ::Api::ApplicationController
     before_action :authenticate_user!
-    before_action :get_schedule, only: [:show, :destroy]
+    before_action :get_schedule, only: [:show, :update, :destroy]
 
     def index
       render json: current_company.schedules
@@ -19,7 +19,26 @@ module Api
 
       if @schedule.save!
         allowed_params[:user_ids].split(',').each do |user_id|
-          UserSchedule.create!(user_id: user_id.to_i, schedule: @schedule)
+          @schedule.user_schedules.create!(user_id: user_id.to_i)
+        end
+        render json: @schedule
+      else
+        render_json_error(ServerError.new(details: 'An error occured. Try again later'))
+      end
+    end
+
+    def update
+      schedule_params.each do |name, value|
+        @schedule[name] = value
+      end
+      @schedule.weekdays = allowed_params[:weekdays].split(',')
+
+      user_ids = allowed_params[:user_ids].split(',').map(&:to_i)
+      @schedule.user_schedules.where.not(user_id: user_ids).destroy_all # Remove old ones
+
+      if @schedule.save!
+        user_ids.each do |user_id|
+          @schedule.user_schedules.find_or_create_by!(user_id: user_id)
         end
         render json: @schedule
       else
