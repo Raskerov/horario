@@ -2,7 +2,10 @@ import Vue from 'vue';
 import VueAxios from 'vue-axios';
 import VueSimpleAlert from 'vue-simple-alert';
 import VCalendar from 'v-calendar';
-import VueTimepicker from 'vue2-timepicker'
+import VueTimepicker from 'vue2-timepicker';
+import 'vue2-timepicker/dist/VueTimepicker.css'
+import vSelect from 'vue-select';
+import 'vue-select/dist/vue-select.css';
 
 import httpClient from './utils/http_client';
 import router from './routers/app';
@@ -21,6 +24,8 @@ Vue.use(roles, {});
 Vue.use(VueSimpleAlert);
 Vue.use(VCalendar);
 Vue.use(VueTimepicker);
+Vue.component('v-timepicker', VueTimepicker)
+Vue.component('v-select', vSelect)
 
 const app = new Vue({
   router,

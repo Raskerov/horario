@@ -14,13 +14,13 @@
           <div class="create-form__label">
             {{ $t('schedule.form.start_hour') }}
           </div>
-          <vue-timepicker format="HH:mm" v-model="form.fields.startHour" minute-interval="15"/>
+          <v-timepicker format="HH:mm" v-model="form.fields.startHour" minute-interval="15"/>
         </div>
         <div class="create-form__hour-picker">
           <div class="create-form__label">
             {{ $t('schedule.form.end_hour') }}
           </div>
-          <vue-timepicker format="HH:mm" v-model="form.fields.endHour" minute-interval="15"/>
+          <v-timepicker format="HH:mm" v-model="form.fields.endHour" minute-interval="15"/>
         </div>
       </div>
 

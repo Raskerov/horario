@@ -15,13 +15,13 @@
           <div class="edit-form__label">
             {{ $t('schedule.form.start_hour') }}
           </div>
-          <vue-timepicker format="HH:mm" v-model="form.fields.startHour" minute-interval="15"/>
+          <v-timepicker format="HH:mm" v-model="form.fields.startHour" minute-interval="15"/>
         </div>
         <div class="edit-form__hour-picker">
           <div class="edit-form__label">
             {{ $t('schedule.form.end_hour') }}
           </div>
-          <vue-timepicker format="HH:mm" v-model="form.fields.endHour" minute-interval="15"/>
+          <v-timepicker format="HH:mm" v-model="form.fields.endHour" minute-interval="15"/>
         </div>
       </div>
 
@@ -60,13 +60,12 @@
 import {mapState} from "vuex";
 import _ from "lodash";
 import InputBuilder from "../../elements/common/InputBuilder";
-import VueTimepicker from 'vue2-timepicker/src/vue-timepicker.vue'
 import ScheduleForm from "../../../forms/schedule_edit";
 import ScheduleSelector from "../../elements/common/ScheduleSelector";
 import schedule_repository from "../../../repositories/schedule_repository";
 
 export default {
-  components: { ScheduleSelector, InputBuilder, VueTimepicker },
+  components: { ScheduleSelector, InputBuilder },
   data() {
     return {
       form: new ScheduleForm(),
