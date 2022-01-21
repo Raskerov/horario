@@ -8,6 +8,4 @@ class UserSerializer < ActiveModel::Serializer
   def joined
     object.confirmed_at.present?
   end
-
-  # TODO: User status
 end

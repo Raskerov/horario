@@ -45,6 +45,7 @@ pl:
     welcome: 'Witaj, %{user_name}!'
   users:
     title: Lista pracowników
+    invited_user: Zaproszony pracownik
     table_headers:
       status: Status
       fullName: Imię pracownika

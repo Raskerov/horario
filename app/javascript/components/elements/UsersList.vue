@@ -18,10 +18,7 @@
             class="table__column"
             :class="`users-table__column--${column}`"
         >
-          <div v-if="column === 'status'">
-            USER STATUS
-          </div>
-          <div v-else-if="column === 'role'">
+          <div v-if="column === 'role'">
             {{ $t(`users.roles.${user.role}`) }}
           </div>
           <div v-else-if="column === 'actions'" class="users-table__cta">
@@ -31,6 +28,9 @@
             <button class="button" @click="deleteUser(user)">
               {{ $t('users.table.delete') }}
             </button>
+          </div>
+          <div v-else-if="(column === 'fullName') && !user.joined">
+            {{ $t('users.invited_user') }}
           </div>
           <div v-else>
             {{ user[column] }}
@@ -53,7 +53,7 @@ export default {
       companyUsers: state => state.company.users,
     }),
     columns() {
-      return ['status', 'fullName', 'email', 'role', 'actions'];
+      return ['fullName', 'email', 'role', 'actions'];
     },
     users() {
       return this.companyUsers;
@@ -95,23 +95,18 @@ export default {
 
 <style lang="scss" scoped>
   .users-table__column {
-    &--status {
-      width: 15%;
-      overflow-x: auto;
-    }
-
     &--fullName {
-      width: 45%;
+      width: 50%;
       overflow-x: auto;
     }
 
     &--email {
-      width: 15%;
+      width: 20%;
       overflow-x: hidden;
     }
 
     &--role {
-      width: 10%;
+      width: 15%;
       overflow-x: hidden;
     }
 
