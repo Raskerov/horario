@@ -126,3 +126,24 @@ pl:
     hours: Godziny
     days: Dni w tygodniu
     workers_amount: Ilość przydzielonych pracowników
+  freedays:
+    add_request: Dodaj wniosek
+    add_freeday: Dodaj dzień wolny
+    close_form: Zamknij formularz
+    delete: Anuluj
+    form:
+      worker: Pracownik
+      reason: Powód
+      dates: W dniach
+      submit: Dodaj
+    reasons:
+      vacation: Urlop płatny
+      l4: L4
+      on_demand: Na żądanie
+      unpaid: Bezpłatny
+    table_headers:
+      user: Pracownik
+      dates: W dniach
+      reason: Powód
+      status: Status
+      actions: Akcje

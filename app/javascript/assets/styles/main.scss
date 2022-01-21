@@ -69,3 +69,7 @@
 .table__column {
   padding: 0 15px;
 }
+
+/deep/ .vs__dropdown-option--highlight {
+  background-color: #bf7275;
+}

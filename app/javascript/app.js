@@ -23,7 +23,6 @@ Vue.use(auth, {});
 Vue.use(roles, {});
 Vue.use(VueSimpleAlert);
 Vue.use(VCalendar);
-Vue.use(VueTimepicker);
 Vue.component('v-timepicker', VueTimepicker)
 Vue.component('v-select', vSelect)
 
