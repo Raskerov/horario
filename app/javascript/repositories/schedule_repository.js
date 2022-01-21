@@ -8,6 +8,12 @@ export default {
     return response.data;
   },
 
+  async getFreedays(id) {
+    const response = await httpClient.get(`/schedules/${id}/freedays`);
+
+    return response.data;
+  },
+
   async create(params) {
     const formData = new FormData();
 

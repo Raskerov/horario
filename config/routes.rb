@@ -33,7 +33,9 @@ Rails.application.routes.draw do
     resources :messages, only: [:index, :create]
     get '/messages/conversation', to: 'messages#conversation', as: 'conversation'
 
-    resources :schedules, only: [:index, :show, :create, :update, :destroy]
+    resources :schedules, only: [:index, :show, :create, :update, :destroy] do
+      get :freedays, on: :member
+    end
     resources :freedays, only: [:index, :create, :update]
   end
 

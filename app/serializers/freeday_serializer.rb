@@ -2,7 +2,7 @@ class FreedaySerializer < ActiveModel::Serializer
   attributes :id, :user, :dates, :status, :status_label, :reason
 
   def dates
-    "#{object.start_date.strftime('%d.%m.%Y')} - #{object.end_date.strftime('%d.%m.%Y')}"
+    "#{object.start_date.strftime('%Y.%m.%d')} - #{object.end_date.strftime('%Y.%m.%d')}"
   end
 
   def user

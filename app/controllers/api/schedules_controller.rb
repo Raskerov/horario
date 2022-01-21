@@ -3,10 +3,14 @@
 module Api
   class SchedulesController < ::Api::ApplicationController
     before_action :authenticate_user!
-    before_action :get_schedule, only: [:show, :update, :destroy]
+    before_action :get_schedule, only: [:show, :freedays, :update, :destroy]
 
     def index
       render json: current_company.schedules
+    end
+
+    def freedays
+      render json: Freeday.where(user_id: @schedule.user_ids).where("end_date > ?", Date.current.beginning_of_month)
     end
 
     def show
