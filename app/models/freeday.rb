@@ -9,10 +9,6 @@ class Freeday < ApplicationRecord
   validates_presence_of :user, :reason, :status, :start_date, :end_date
 
   def cancelled?
-    rejected && rejected_by == user
-  end
-
-  def rejected?
-    rejected && rejected_by != user
+    rejected? && rejected_by == user
   end
 end

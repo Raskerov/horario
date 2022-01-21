@@ -58,20 +58,25 @@
             :class="`freedays-table__column--${column}`"
         >
           <div v-if="column === 'user'">
-            USER
+            {{ day.user.fullName }}
           </div>
           <div v-else-if="column === 'dates'">
-            DATES
+            {{ day.dates }}
           </div>
           <div v-else-if="column === 'reason'">
-            REASON
+            {{ $t(`freedays.reasons.${day.reason}`) }}
           </div>
           <div v-else-if="column === 'status'">
-            STATUS
+            <button v-if="day.status === 'requested'" class="button" @click="acceptFreeday(day)">
+              {{ $t('freedays.accept') }}
+            </button>
+            <div v-else>
+              {{ $t(`freedays.status.${day.statusLabel}`) }}
+            </div>
           </div>
           <div v-else-if="column === 'actions'">
-            <button class="button" @click="removeFreeday(day)">
-              {{ $t('freedays.delete') }}
+            <button v-if="day.status !== 'rejected'" class="button" @click="rejectFreeday(day)">
+              {{ deleteLabel(day) }}
             </button>
           </div>
         </div>
@@ -82,16 +87,16 @@
 
 <script>
 import _ from 'lodash';
+import {mapState} from "vuex";
 import InputBuilder from "../../elements/common/InputBuilder";
 import FreedayForm from "../../../forms/freeday";
-import {mapState} from "vuex";
+import freedaysRepository from "../../../repositories/freedays_repository";
 
 export default {
   components: { InputBuilder },
   data() {
     return {
       formOpened: false,
-      freedays: [ { id: 1 }],
       form: new FreedayForm(),
       datesConfig: {
         type: 'string',
@@ -99,13 +104,15 @@ export default {
       }
     };
   },
-  created() {
-    this.$store.dispatch('company/getCompanyUsers');
+  async created() {
+    await this.$store.dispatch('company/getCompanyUsers');
+    await this.$store.dispatch('freedays/getFreedays');
     this.form.fields.user = { id: this.$auth.user.id, label: this.$auth.user.fullName };
   },
   computed: {
     ...mapState({
       companyUsers: state => state.company.users,
+      freedays: state => state.freedays.freedays,
     }),
     joinedUsers() {
       return _.filter(this.companyUsers, user => user.joined);
@@ -141,9 +148,24 @@ export default {
     toggleForm() {
       this.formOpened = !this.formOpened;
     },
+    deleteLabel(day) {
+      if (day.user.id === this.$auth.user.id ) {
+        return this.$t('freedays.cancel');
+      }
+      return this.$t('freedays.reject');
+    },
+    async acceptFreeday(day) {
+      await freedaysRepository.update(day.id, { status: 'accepted' })
+      await this.$store.dispatch('freedays/getFreedays');
+    },
+    async rejectFreeday(day) {
+      await freedaysRepository.update(day.id, { status: 'rejected' })
+      await this.$store.dispatch('freedays/getFreedays');
+    },
     async createFreeday() {
       await this.form.submit();
-      // TODO: Reload freedays list
+      await this.$store.dispatch('freedays/getFreedays');
+      this.formOpened = false;
     }
   }
 }

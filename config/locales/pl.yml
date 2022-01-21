@@ -130,10 +130,12 @@ pl:
     add_request: Dodaj wniosek
     add_freeday: Dodaj dzień wolny
     close_form: Zamknij formularz
-    delete: Anuluj
+    cancel: Anuluj
+    reject: Odrzuć
+    accept: Akceptuj
     form:
       worker: Pracownik
-      reason: Powód
+      reason: Typ wolnego
       dates: W dniach
       submit: Dodaj
     reasons:
@@ -141,9 +143,14 @@ pl:
       l4: L4
       on_demand: Na żądanie
       unpaid: Bezpłatny
+    status:
+      accepted: Zaakceptowany
+      requested: Oczekujący na zatwierdzenie
+      cancelled: Anulowany
+      rejected: Odrzucony
     table_headers:
       user: Pracownik
       dates: W dniach
-      reason: Powód
+      reason: Typ wolnego
       status: Status
       actions: Akcje
