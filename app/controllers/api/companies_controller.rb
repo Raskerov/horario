@@ -9,17 +9,13 @@ module Api
       render json: current_company
     end
 
-    def users
-      render json: current_company.users
-    end
-
     def update
       if current_company.update!(company_params)
-        current_company.reload!
+        current_company.reload
         render json: current_company
-      else
-        render_json_error({ name: 'Update not available', details: '', status: 500 })
       end
+    rescue ActiveRecord::RecordInvalid => e
+      render_json_error(RecordInvalidError.new(details: e))
     end
 
     def destroy

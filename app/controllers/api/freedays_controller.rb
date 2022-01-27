@@ -15,6 +15,7 @@ module Api
 
     def create
       @freeday = Freeday.new(create_params)
+
       if current_user.managing?
         @freeday.status = 'accepted'
         @freeday.accepted_by = current_user

@@ -11,9 +11,9 @@ module Api
     def update
       if current_user.update!(user_params)
         render json: current_user
-      else
-        render_json_error({ name: 'Update not available', details: '', status: 500 })
       end
+    rescue ActiveRecord::RecordInvalid => e
+      render_json_error(RecordInvalidError.new(details: e))
     end
 
     private

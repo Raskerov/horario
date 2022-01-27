@@ -16,9 +16,9 @@ module Api
       if user.update!(register_params)
         user.update!(confirmed_at: Time.current)
         head :ok
-      else
-        render_json_error(RecordInvalidError.new(details: user.errors))
       end
+    rescue ActiveRecord::RecordInvalid => e
+      render_json_error(RecordInvalidError.new(details: e))
     end
 
     private

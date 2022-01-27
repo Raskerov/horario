@@ -1,12 +1,5 @@
 class UserInvitationService
-  attr_reader :invite_email, :inviter
-
-  def initialize(invite_email, inviter)
-    @invite_email = invite_email
-    @inviter = inviter
-  end
-
-  def call
+  def self.call(invite_email, inviter)
     user_params = base_params.merge({ email: invite_email })
     user_params[:role] = 'worker'
 
@@ -18,7 +11,7 @@ class UserInvitationService
     employee
   end
 
-  def base_params
+  def self.base_params
     {
       password: "Aa1#{SecureRandom.hex}"
     }

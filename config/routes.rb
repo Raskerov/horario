@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       root to: "users#index"
     end
 
+  # overwrite default devise helpers to remove unnecessary endpoints
   devise_for :users, skip: :all
   devise_scope :user do
     scope :api do
@@ -18,6 +19,7 @@ Rails.application.routes.draw do
         put :password, to: 'api/auth/passwords#update'
       end
     end
+    get :confirmation, to: 'confirmations#show'
   end
 
   namespace :api do
@@ -33,7 +35,7 @@ Rails.application.routes.draw do
     resources :messages, only: [:index, :create]
     get '/messages/conversation', to: 'messages#conversation', as: 'conversation'
 
-    resources :schedules, only: [:index, :show, :create, :update, :destroy] do
+    resources :schedules, only: [:index, :create, :update, :destroy] do
       get :freedays, on: :member
     end
     resources :freedays, only: [:index, :create, :update]

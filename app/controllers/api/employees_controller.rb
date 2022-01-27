@@ -10,7 +10,7 @@ module Api
     end
 
     def create
-      UserInvitationService.new(params[:email], current_user).call
+      UserInvitationService.call(params[:email], current_user)
 
       head :ok
     end
