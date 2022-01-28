@@ -6,15 +6,15 @@
     <div class="forgot-password__info">
       {{ $t('forgot_password.info') }}
     </div>
-<!--    <ResetPasswordForm @success="$emit('success', $event)" />-->
+    <ForgotPasswordForm @success="$emit('success', $event)" />
   </div>
 </template>
 <script>
-// import ResetPasswordForm from '../../elements/auth/login/ResetPasswordForm.vue';
+import ForgotPasswordForm from "../../../forms/forgot_password";
 
 export default {
   components: {
-    // ResetPasswordForm,
+    ForgotPasswordForm,
   },
 };
 </script>

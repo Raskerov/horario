@@ -15,8 +15,8 @@ describe Api::CompaniesController do
       expect(subject).to have_http_status(:ok)
       body = MultiJson.load(subject.body, symbolize_keys: true)
       expect(body).to match({
-                              id: 1,
-                              name: "Some company 10"
+                              id: company.id,
+                              name: company.name
                             })
     end
   end

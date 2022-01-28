@@ -7,15 +7,18 @@ module Api
       before_action :configure_permitted_parameters
 
       def create
-        Company.create!(name: sign_up_params[:company])
+        company = Company.create!(name: sign_up_params[:company])
         User.create!(
           full_name: sign_up_params[:full_name],
           email: sign_up_params[:email],
           password: sign_up_params[:password],
-          password_confirmation: sign_up_params[:password_confirmation]
+          password_confirmation: sign_up_params[:password_confirmation],
+          company: company
         )
 
-        render json: {}
+        head :ok
+      rescue ActiveRecord::RecordInvalid => e
+        render_json_error(RecordInvalidError.new(details: e))
       end
 
       private

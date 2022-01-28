@@ -1,0 +1,13 @@
+<% if @resource.confirmed? %>
+  <div class="email__title"><%= t('devise_mailer.email_change_confirmation.subject') %></div>
+  <div class="email__text"><%= t('devise_mailer.email_change_confirmation.body').html_safe %></div>
+  <div class="email__button-wrapper">
+    <a class="email__button" href="<%= @url %>"><span style="color: #ffffff"><%= t('devise_mailer.email_change_confirmation.button') %></span></a>
+  </div>
+<% else %>
+  <div class="email__title"><%= t('devise_mailer.confirmation.header') %></div>
+  <div class="email__text"><%= t('devise_mailer.confirmation.body') %></div>
+  <div class="email__button-wrapper">
+    <a class="email__button" href="<%= @url %>"><span style="color: #ffffff"><%= t('devise_mailer.confirmation.button') %></span></a>
+  </div>
+<% end %>

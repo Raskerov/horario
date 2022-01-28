@@ -155,3 +155,21 @@ pl:
       reason: Typ wolnego
       status: Status
       actions: Akcje
+  devise_mailer:
+    confirmation:
+      subject: Potwierdź swoje konto!
+      header: Właśnie się zarejestrowałeś w aplikacji
+      body: Kliknij poniżej żeby zacząć korzystać z Horario
+      button: Login
+    email_change_confirmation:
+      subject: Potwierdź zmianę w swoim adresie e-mail
+      body: Otrzymaliśmy zgłoszenie zmiany adresu email, kliknij poniżej aby potwierdzić
+      button: Potwierdź nowy adres email
+    email_changed:
+      subject: Potwierdź zmianę w swoim adresie e-mail
+      body: Otrzymaliśmy zgłoszenie zmiany adresu email
+    password_reset:
+      subject: Reset hasła
+      header: Zresetuj hasło
+      body: Otrzymaliśmy zgłoszenie resetu hasła, kliknij poniżej aby zresetować hasło
+      button: Reset
