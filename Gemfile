@@ -33,13 +33,13 @@ end
 group :test do
   gem 'timecop'
   gem 'capybara'
-  gem 'database_cleaner-active_record'
-  gem 'selenium-webdriver'
   gem 'capybara-email'
+  gem 'selenium-webdriver'
   gem 'rspec-rails'
   gem 'factory_bot_rails'
   gem 'database_cleaner'
   gem 'webdrivers'
   gem 'rexml'
+  gem 'cuprite'
 end
 

@@ -2,7 +2,7 @@
   <form @submit.prevent="update">
     <InputBuilder
         v-model.lazy="form.fields.name"
-        name="fullName"
+        name="name"
         :label="$t('settings.fields.company.label')"
         :errors="form.errors.name"
         required
