@@ -34,6 +34,7 @@
         </div>
         <textarea
           v-if="conversation"
+          name="message"
           class="messages__conversation__input"
           :placeholder="$t('messages.input_placeholder')"
           v-on:keyup.enter="submitMessage"

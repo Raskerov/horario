@@ -29,7 +29,7 @@
           {{ $t('schedule.form.weekdays_label') }}
         </div>
         <div v-for="day in weekdays">
-          <input type="checkbox" :checked="weekdaySelected(day)" @change="updateWeekdays($event.target.checked, day)">
+          <input :id='day' type="checkbox" :checked="weekdaySelected(day)" @change="updateWeekdays($event.target.checked, day)">
           <label :for="day">{{ $t(`schedule.form.weekdays.${day}`) }}</label>
         </div>
       </div>
@@ -39,7 +39,7 @@
           {{ $t('schedule.form.workers') }}
         </div>
         <div v-for="worker in workers">
-          <input type="checkbox" :checked="workerSelected(worker)" @change="updateWorkers($event.target.checked, worker)">
+          <input :id="`worker_${worker.id}`" type="checkbox" :checked="workerSelected(worker)" @change="updateWorkers($event.target.checked, worker)">
           <label :for="worker">{{ workerName(worker) }}</label>
         </div>
       </div>

@@ -8,6 +8,19 @@ describe 'profile', type: :feature, js: true do
     login user
   end
 
+  scenario 'full name' do
+    visit '/app/settings/profile'
+
+    expect(page).to have_content('Imię i nazwisko')
+
+    fill_in 'fullName', with: 'Jan Kowalski'
+
+    click_button 'Zaktualizuj dane'
+
+    expect(page.current_path).to eq('/app/settings/profile')
+    expect(user.reload.full_name).to eq('Jan Kowalski')
+  end
+
   scenario 'password change' do
     visit '/app'
     visit '/app/settings/password'

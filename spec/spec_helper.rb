@@ -5,6 +5,7 @@ require File.expand_path('../config/environment', __dir__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
 require 'devise'
+require 'database_cleaner'
 require 'capybara/rails'
 require 'capybara/cuprite'
 require 'capybara/rspec'
@@ -39,14 +40,10 @@ RSpec.configure do |config|
   config.use_transactional_examples = false
   config.infer_spec_type_from_file_location!
 
-  before_executed = false
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)
-    unless before_executed
-      FactoryBot.lint traits: true
-      DatabaseCleaner.clean_with(:truncation)
-      before_executed = true
-    end
+    FactoryBot.lint traits: true
+    Rails.cache.clear
   end
 
   config.around(:each) do |example|
@@ -61,9 +58,5 @@ RSpec.configure do |config|
     DatabaseCleaner.cleaning do
       example.run
     end
-  end
-
-  config.after(:suite) do
-    FileUtils.rm_rf(Rails.root.join('tmp', 'storage'))
   end
 end

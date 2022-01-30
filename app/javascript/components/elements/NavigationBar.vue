@@ -34,9 +34,9 @@
       >
         {{ $t('navigation.settings') }}
       </RouterLink>
-      <div class="navigation-bar__nav-item" @click="logout">
+      <button class="navigation-bar__nav-item" @click="logout">
         {{ $t('navigation.logout') }}
-      </div>
+      </button>
     </div>
   </div>
 </template>
@@ -80,6 +80,9 @@ export default {
     padding: 0 10px;
     text-decoration: none;
     text-transform: uppercase;
+    outline: none;
+    border: none;
+    background-color: transparent;
 
     &:visited {
       color: #000000;

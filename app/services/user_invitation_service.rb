@@ -4,7 +4,7 @@ class UserInvitationService
     user_params[:role] = 'worker'
 
     employee = inviter.company.users.new(user_params)
-    employee.skip_confirmation!
+    employee.skip_confirmation_notification!
     employee.save!
     EmployeesMailer.invite(employee.id).deliver_later
 

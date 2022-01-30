@@ -25,7 +25,7 @@
             <button class="button" @click="choseUserRole(user)">
               {{ $t('users.table.roles') }}
             </button>
-            <button class="button" @click="deleteUser(user)">
+            <button :id="`delete_${user.id}`" class="button" @click="deleteUser(user)" :disabled="user.id === $auth.user.id">
               {{ $t('users.table.delete') }}
             </button>
           </div>
