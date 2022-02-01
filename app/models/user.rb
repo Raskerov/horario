@@ -22,8 +22,4 @@ class User < ApplicationRecord
   def managing?
     owner? || manager?
   end
-
-  def send_confirmation_notification?
-    false
-  end
 end

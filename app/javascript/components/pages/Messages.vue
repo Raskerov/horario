@@ -202,12 +202,13 @@ export default {
       display: block;
       width: fit-content;
       max-width: 50%;
+      min-width: 350px;
       border-radius: 12px;
       margin: 2px 0 20px 0;
       padding: 10px;
       color: #000;
       font-size: 16px;
-      background-color: #666666;
+      background-color: #ee7e85;
     }
   }
 

@@ -8,7 +8,7 @@
           {{ $t('settings.fields.company.delete') }}
         </div>
 
-        <button type="submit" class="button" @click="deleteCompany">
+        <button type="submit" class="button button--reverse-color" @click="deleteCompany">
           {{ $t('settings.delete') }}
         </button>
       </div>

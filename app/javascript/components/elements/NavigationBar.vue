@@ -8,6 +8,7 @@
         {{ $t('navigation.schedule') }}
       </RouterLink>
       <RouterLink
+          v-if="$auth.user.managing"
           :to="{ name: `employees` }"
           class="navigation-bar__nav-item"
       >
@@ -23,6 +24,7 @@
 
     <div class="navigation-bar__wrapper__right-side">
       <a
+          v-if="$auth.user.admin"
           href="/admin"
           class="navigation-bar__nav-item"
       >

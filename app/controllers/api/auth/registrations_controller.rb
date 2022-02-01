@@ -11,6 +11,7 @@ module Api
         User.create!(
           full_name: sign_up_params[:full_name],
           email: sign_up_params[:email],
+          role: 'owner',
           password: sign_up_params[:password],
           password_confirmation: sign_up_params[:password_confirmation],
           company: company

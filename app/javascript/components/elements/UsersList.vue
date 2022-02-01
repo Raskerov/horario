@@ -21,7 +21,7 @@
           <div v-if="column === 'role'">
             {{ $t(`users.roles.${user.role}`) }}
           </div>
-          <div v-else-if="column === 'actions'" class="users-table__cta">
+          <div v-else-if="column === 'actions' && $auth.user.managing" class="users-table__cta">
             <button class="button" @click="choseUserRole(user)">
               {{ $t('users.table.roles') }}
             </button>

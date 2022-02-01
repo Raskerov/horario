@@ -67,7 +67,7 @@
             {{ $t(`freedays.reasons.${day.reason}`) }}
           </div>
           <div v-else-if="column === 'status'">
-            <button v-if="day.status === 'requested'" class="button" @click="acceptFreeday(day)">
+            <button v-if="day.status === 'requested' && $auth.user.managing" class="button" @click="acceptFreeday(day)">
               {{ $t('freedays.accept') }}
             </button>
             <div v-else>

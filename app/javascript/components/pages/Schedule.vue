@@ -25,7 +25,11 @@ export default {
   components: { UsersList },
   computed: {
     tabs() {
-      return ['overview', 'create', 'edit', 'freedays'];
+      if (this.$auth.user.managing) {
+        return ['overview', 'create', 'edit', 'freedays'];
+      }
+
+      return ['overview', 'freedays'];
     }
   }
 }
